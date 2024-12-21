@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Art by Alex</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #000000;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            color: #ffffff;
+            margin: 0;
+        }
+
+        nav {
+            margin: 15px 0;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: 'Lora', serif;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff4d4d;
+        }
+
+        main {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Lora', serif;
+            font-size: 2.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .cta-button {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ff6666;
+            transform: translateY(-2px);
+        }
+
+        .map-container {
+            margin: 40px auto;
+            max-width: 800px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000000;
+            color: white;
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ART BY ALEX</h1>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About Me</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Contact Me</h1>
+            <p>I'd love to hear from you! Fill out the form below to request a commission or connect with me.</p>
+            <form class="form-container" id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="artwork-type">Type of Artwork:</label>
+                <select id="artwork-type" name="artwork-type" required>
+                    <option value="">Select</option>
+                    <option value="painting">Painting</option>
+                    <option value="sketch">Sketch</option>
+                    <option value="sculpture">Sculpture</option>
+                </select>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+
+                <label for="budget">Budget Range:</label>
+                <input type="text" id="budget" name="budget" required>
+
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </section>
+
+        <section class="map-container">
+            <h2>Visit My Studio</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509374!2d144.95592831531578!3d-37.81720997975186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf0727e733cdaa1e0!2sFederation+Square!5e0!3m2!1sen!2sau!4v1630467404780!5m2!1sen!2sau" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Art by Alex. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const artworkType = document.getElementById("artwork-type").value;
+            const description = document.getElementById("description").value;
+            const budget = document.getElementById("budget").value;
+
+            if (!name || !email || !artworkType || !description || !budget) {
+                alert("Please fill out all fields.");
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

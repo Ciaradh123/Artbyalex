@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art by Alex</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #000000;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            margin: 15px 0;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: 'Lora', serif;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff4d4d;
+        }
+
+        main {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Lora', serif;
+            font-size: 2.8rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-family: 'Lora', serif;
+            color: #ff4d4d;
+            font-size: 2rem;
+            margin-top: 30px;
+        }
+
+        .slider {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slides img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .slider-nav button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .slider-nav button:hover {
+            background-color: #ff4d4d;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #ff4d4d;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ff6666;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000000;
+            color: white;
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ART BY ALEX</h1>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About Me</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section class="slider">
+            <div class="slides">
+                <img src="featured.jpg" alt="Featured Artwork 1">
+                <img src="artwork3.jpg" alt="Featured Artwork 2">
+                <img src="artwork6.jpg" alt="Featured Artwork 3">
+            </div>
+            <div class="slider-nav">
+                <button id="prev">?</button>
+                <button id="next">?</button>
+            </div>
+        </section>
+        <h2>Welcome to My Art Gallery</h2>
+        <p>Welcome to Art by Alex, where every piece of artwork is a celebration of imagination and passion. 
+Dive into a collection of vibrant paintings and intricate sketches that capture the beauty and essence of life. 
+Explore a world of creativity with a stunning collection of artworks designed to inspire. 
+Discover these vibrant pieces that bring imagination to life.</p>
+        <a href="gallery.html" class="cta-button">View Gallery</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Art by Alex. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const slides = document.querySelector('.slides');
+        const images = document.querySelectorAll('.slides img');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            slides.style.transform = `translateX(${-index * 100}%)`;
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            showSlide(currentIndex);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            showSlide(currentIndex);
+        });
+    </script>
+</body>
+</html>

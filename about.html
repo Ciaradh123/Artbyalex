@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Art by Alex</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #000000;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            color: #ffffff; /* Ensure the header title remains white */
+            margin: 0;
+        }
+
+        nav {
+            margin: 15px 0;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: 'Lora', serif;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff4d4d;
+        }
+
+        main {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Lora', serif;
+            font-size: 2.8rem;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-family: 'Lora', serif;
+            color: #ff4d4d;
+            font-size: 2rem;
+            margin-top: 30px;
+        }
+
+        .slider {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slides img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .slider-nav button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .slider-nav button:hover {
+            background-color: #ff4d4d;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #ff4d4d;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ff6666;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000000;
+            color: white;
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ART BY ALEX</h1>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About Me</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>About Me</h1>
+            <p>Hello! I'm Alex, a passionate artist who finds beauty in every stroke of the brush. My journey into the world of art began as a child, sketching the landscapes of my hometown. Over the years, I've developed a unique style that blends realism and abstract elements to tell stories that resonate with people.</p>
+            <p>From vibrant paintings to intricate sketches, I pour my heart and soul into every piece. My works have been featured in exhibitions and cherished by collectors around the globe. Art is not just my profession but my way of connecting with the world and inspiring others to see beauty in everyday life.</p>
+            <img src="portrait.jpg" alt="Alex's Portrait" class="portrait">
+        </section>
+
+        <section class="timeline">
+            <h2>Milestones</h2>
+            <div class="timeline-item">
+                <h4>2020</h4>
+                <p>First solo exhibition at the City Art Gallery, showcasing over 30 pieces of artwork.</p>
+            </div>
+            <div class="timeline-item">
+                <h4>2021</h4>
+                <p>Collaborated with renowned fashion designer on a limited-edition collection.</p>
+            </div>
+            <div class="timeline-item">
+                <h4>2023</h4>
+                <p>Published an art book featuring my best works and stories behind them.</p>
+            </div>
+        </section>
+
+        <section class="exhibitions">
+            <h2>Exhibitions & Collaborations</h2>
+            <ul>
+                <li>City Art Gallery Solo Exhibition, 2020</li>
+                <li>Collaboration with Jane Doe Fashion, 2021</li>
+                <li>Group Show at Modern Art Museum, 2022</li>
+                <li>Art Book Publication: "Stories in Strokes," 2023</li>
+            </ul>
+        </section>
+
+        <section class="video-container">
+            <h2>Watch Me in Action</h2>
+            <iframe src="https://www.youtube.com/embed/gi8XmLT41eM" title="Alex at Work"></iframe>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Art by Alex. All rights reserved.</p>
+    </footer>
+</body>
+</html>

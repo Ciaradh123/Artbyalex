@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gallery of Alex's unique art pieces.">
+    <title>Gallery - Art by Alex</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #000000;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            color: #ffffff;
+            margin: 0;
+        }
+
+        nav {
+            margin: 15px 0;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-family: 'Lora', serif;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff4d4d;
+        }
+
+        main {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Lora', serif;
+            font-size: 2.8rem;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .grid-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 10px;
+        }
+
+        .grid-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay h3 {
+            margin: 5px 0;
+            font-size: 1.2rem;
+        }
+
+        .overlay p {
+            font-size: 0.9rem;
+        }
+
+        /* Lightbox Styles */
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        #lightbox:target {
+            display: flex;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000000;
+            color: white;
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ART BY ALEX</h1>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About Me</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="gallery">
+            <h1>Gallery</h1>
+            <div class="grid">
+                <!-- Artwork 1 -->
+                <div class="grid-item">
+                    <a href="#lightbox1">
+                        <img src="artwork1.jpg" alt="Artwork 1">
+                        <div class="overlay">
+                            <h3>Golden Fields</h3>
+                            <p>A field of golden sunflowers twinkling and dancing in the sunset</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Artwork 2 -->
+                <div class="grid-item">
+                    <a href="#lightbox2">
+                        <img src="artwork2.jpg" alt="Artwork 2">
+                        <div class="overlay">
+                            <h3>Grannys House</h3>
+                            <p>Childhood is awoken within us again everytime we walk up this very path to grannys</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Artwork 3 -->
+                <div class="grid-item">
+                    <a href="#lightbox3">
+                        <img src="artwork3.jpg" alt="Artwork 3">
+                        <div class="overlay">
+                            <h3>Moonlights Mirror</h3>
+                            <p>Waves crashing to shore in the purple moonlight of the early hours of day</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Add remaining artworks -->
+                <!-- Artwork 4 -->
+                <div class="grid-item">
+                    <a href="#lightbox4">
+                        <img src="artwork4.jpg" alt="Artwork 4">
+                        <div class="overlay">
+                            <h3>Irelands Own</h3>
+                            <p>The beauty of the Wild West</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Artwork 5 -->
+                <div class="grid-item">
+                    <a href="#lightbox5">
+                        <img src="artwork5.jpg" alt="Artwork 5">
+                        <div class="overlay">
+                            <h3>The beauty of NYC</h3>
+                            <p>Autumn has reached the big apple</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Artwork 6 -->
+                <div class="grid-item">
+                    <a href="#lightbox6">
+                        <img src="artwork6.jpg" alt="Artwork 6">
+                        <div class="overlay">
+                            <h3>A Sisters View</h3>
+                            <p>Beauty is within the eye of the beholder</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Artwork 7 -->
+                <div class="grid-item">
+                    <a href="#lightbox7">
+                        <img src="artwork7.jpg" alt="Artwork 7">
+                        <div class="overlay">
+                            <h3>Hazel glimpses</h3>
+                            <p>The simplicity yet beauty within Gods art</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Artwork 8 -->
+                <div class="grid-item">
+                    <a href="#lightbox8">
+                        <img src="artwork8.jpg" alt="Artwork 8">
+                        <div class="overlay">
+                            <h3>Cultivating Colorado</h3>
+                            <p>In the mountains of Colorado, I found myself </p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Artwork 9 -->
+                <div class="grid-item">
+                    <a href="#lightbox9">
+                        <img src="artwork9.jpg" alt="Artwork 9">
+                        <div class="overlay">
+                            <h3>The boy who had it all</h3>
+                            <p>Soccer prodigy of the world who threw it all away by one massive mistake</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Artwork 10 -->
+                <div class="grid-item">
+                    <a href="#lightbox10">
+                        <img src="artwork10.jpg" alt="Artwork 10">
+                        <div class="overlay">
+                            <h3>Dublins Temple</h3>
+                            <p>In all its glory, Temple Bar, the pinacle of Dublins Tourists</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+   
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Art by Alex. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
